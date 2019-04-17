@@ -32,7 +32,7 @@ class Map extends PureComponent {
   initLayer = tileUrl => {
     // osm
     L.tileLayer(tileUrl, {
-      attribution: `<a href='http://bst.ai'>黑芝麻智能科技</a>`,
+      attribution: `<a href='http://bst.ai'>夏日天空智能科技</a>`,
       maxZoom: 19,
     }).addTo(this.map);
   };

@@ -1,5 +1,5 @@
 export default {
-  name: '地图平台-黑芝麻智能科技',
+  name: '地图平台',
   osmTile: {
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     zoom: 11,
