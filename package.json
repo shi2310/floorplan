@@ -1,0 +1,58 @@
+{
+  "name": "overlaymaps",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/BlackSesameTechnologies/overlaymaps.git",
+  "author": "BST",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "cross-env API=/api umi dev",
+    "dev": "cross-env API=http://18.237.203.188/api umi dev",
+    "build": "cross-env API=http://18.237.203.188/api umi build",
+    "build:mock": "cross-env API=/api umi build",
+    "test": "cross-env umi test",
+    "eslint": "cross-env eslint --ext .js,.jsx src",
+    "eslint:fix": "cross-env eslint --fix --ext .js,.jsx src",
+    "precommit": "lint-staged",
+    "now": "npm run build && now -n overlaymaps ./dist",
+    "mock": "umi-serve"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-umi": "^0.1.5",
+    "eslint-plugin-compat": "^2.6.3",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "umi": "^2.1.2",
+    "umi-plugin-react": "^1.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "leaflet": "^1.4.0",
+    "leaflet-geosearch": "^2.7.0",
+    "lodash": "^4.17.11",
+    "lodash.clonedeep": "^4.5.0",
+    "osmtogeojson": "^3.0.0-beta.3",
+    "path-to-regexp": "^3.0.0",
+    "qs": "^6.6.0",
+    "react-helmet": "^5.2.0"
+  }
+}

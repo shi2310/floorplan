@@ -1,0 +1,50 @@
+@import '~antd/es/style/themes/default.less';
+.card {
+  margin-top: 20px;
+  width: 100%;
+  cursor: default;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0;
+  font-size: 14px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px #8e9ebe;
+  @primaryColor: white;
+  .routeinfo {
+    pointer-events: auto;
+    color: @primaryColor;
+    padding: 20px;
+    width: 100%;
+    .head {
+      min-height: 40px;
+      display: flex;
+      justify-content: space-between;
+      span {
+        line-height: 100%;
+        vertical-align: middle;
+        font-weight: bolder;
+        font-size: 15px;
+      }
+      .iconClose {
+        cursor: pointer;
+        color: @primaryColor;
+        font-size: 18px;
+        transition: color .5s;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+    .infolist {
+      width: 100%;
+    }
+    :global {
+      .ant-form-item {
+        margin: 0;
+        .ant-form-item-label label {
+          color: @primaryColor;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.hrow {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.row {
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 10px;
+  @colHeight: 32px;
+  .col {
+    border-right: 1px solid whitesmoke;
+    text-align: center;
+    height: @colHeight;
+    line-height: @colHeight;
+    vertical-align: middle;
+    @size: 10px;
+    .point {
+      width: @size;
+      height: @size;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+:global {
+  .ant-form-item {
+    margin: 0;
+  }
+}
