@@ -23,3 +23,6 @@
    
 + 4.通过gdal2tiles.py将out_geo_n.tif文件进行切片
    - gdal2tiles.py -s EPSG:4326 -z 10-19 out_geo_n.tif tiles
+
+## 示例
+  ![图片丢失](https://xxx/img.png)

@@ -61,7 +61,7 @@ async function onBuildingClick(id, e) {
 function renderBuildings(buildings = []) {
   layerBox.clearLayers();
   _.each(buildings, ({ id, latlngs = [] }) => {
-    if (id > 0 && _.isArray(latlngs)) {
+    if (id > 0 && latlngs && _.isArray(latlngs)) {
       // if has set buildingID
       if (buildingID === id) {
         // Keep the focus building when redrawing
@@ -72,6 +72,7 @@ function renderBuildings(buildings = []) {
             'click',
             onBuildingClick.bind(null, id)
           );
+
           layerBox.addLayer(line);
           focusBuilding = line;
           focusBuilding.setStyle(checkPolygonStyles);
@@ -112,7 +113,10 @@ function setSource(data = []) {
         ...pre,
         {
           id: cur.properties.id,
-          latlngs: _.map(cur.geometry.coordinates, line => _.map(line, point => _.reverse(point))),
+          latlngs:
+            cur.geometry.type === 'Polygon'
+              ? _.map(cur.geometry.coordinates, line => _.map(line, point => _.reverse(point)))
+              : null,
         },
       ],
       []
@@ -132,9 +136,7 @@ function loadBuildings() {
     if (res.success && res.data) {
       const geoJSON = osmtogeojson(res.data, { flatProperties: false });
       if (geoJSON && _.isArray(geoJSON.features)) {
-        console.log(geoJSON.features);
         const datasource = setSource(geoJSON.features);
-        console.log(datasource);
         renderBuildings(datasource);
       }
     }
@@ -142,12 +144,10 @@ function loadBuildings() {
 }
 
 function onMapMove() {
-  // save zoom
-  // const zoom = map.getZoom();
-  // if (zoom >= 16) {
-  //   loadBuildings();
-  // }
-  loadBuildings();
+  const zoom = map.getZoom();
+  if (zoom >= 16) {
+    loadBuildings();
+  }
 }
 
 export function initMap(_map, _buildingClick) {
