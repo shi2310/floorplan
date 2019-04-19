@@ -1,6 +1,7 @@
 # floorplan控制与上传组件
-基于leaflet，地图数据来源于osm。系统框架使用umi，UI使用antdesign
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+基于leaflet，地图数据来源于osm。系统框架使用umi，UI使用antdesign
+
 ## 主要功能：
 + 1.获取osm建筑物数据并在底图上绘制建筑物边框
 + 2.建筑物点击之后显示floorplan上传功能
