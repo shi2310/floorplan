@@ -1,5 +1,6 @@
 # floorplan控制与上传组件
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
 基于leaflet，地图数据来源于osm。系统框架使用umi，UI使用antdesign
 
 ## 主要功能：
