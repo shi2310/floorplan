@@ -27,4 +27,4 @@
    - gdal2tiles.py -s EPSG:4326 -z 10-19 out_geo_n.tif tiles
 
 ## 示例
-  ![图片丢失](https://raw.githubusercontent.com/summer-sky/floorplan/master/img.png)
+  ![图片丢失](img.png)
